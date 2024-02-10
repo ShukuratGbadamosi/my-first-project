@@ -81,13 +81,32 @@
         } else {
             let obj = {time, date, inputOne, inputTwo}
             console.log(obj)
-            // const db = getDatabase();
-            // const db = getDatabase();
+            // let dbRef = ref(database, `users/${auth.currentUser.uid}/todos`);
+            let dbRef = ref(database, `todos/2`);
+            let seved = set(dbRef, obj);
+            if (saved) {
+                alert("todo saved")
+            } else {
+                alert("todo not saved")
+            }
         }
+        document.getElementById('todo').value = ""
+        document.getElementById('todolist').value = ""
     }
-    document.getElementById('todo').value = ""
-    document.getElementById('todolist').value = ""
         window.sumbmitTodo = sumbmitTodo
+
+        // let newRef = ref(database, `todos`)
+        // onValue(newRef, (snapshot)=>{
+        //     let data = snapshot.val()
+        //     console.log(data);
+        //     data.map((todo,index)=>{
+        //         showy.innerHTML += `
+        //             <h5>${todo.inputOne}</h5>
+        //             <h5>${todo.inputTwo}</h5>
+        //             <small>${todo.time}, ${todo.date}</small>
+        //         `
+        //     })
+        // })
     </script>
 </body>
 
