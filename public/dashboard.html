@@ -83,8 +83,8 @@
             let obj = {time, date, inputOne, inputTwo}
             console.log(obj)
             // let dbRef = ref(database, `users/${auth.currentUser.uid}/todos`);
-            let dbRef = ref(database, `todos/2`);
-            let seved = set(dbRef, obj);
+            let dbRef = ref(database, `todos/0`);
+            let saved = set(dbRef, obj);
             if (saved) {
                 alert("todo saved")
             } else {
