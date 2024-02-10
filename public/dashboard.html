@@ -33,28 +33,26 @@
 
 <body class="mx-auto col-lg-7 col-10 p-3">
     <h1 class="mt-lg-5">Welcome to your dashboard</h1>
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+    <div class="shadow fixed-top bg-light">
         <div class="container">
 
-          <span class="d-block">Your Name</span>
 
-          <span class="d-block">your.email@example.com</span>
+          <span class="d-block" id="myEmail"></span>
        
           
-          <!-- Navbar content -->
           <div class="profile-info">
-               <!-- Brand/logo -->
           <a class="navbar-brand" href="#">
-              <img src="path/to/your/image.jpg" alt="Logo" class="profile-picture">
+              <img src="" alt="" id="myImage" class="profile-picture">
             </a>
           </div>
         </div>
-      </nav>
+      </div>
       
-    <div id="show" class="shadow-sm p-3"></div>
+    <!-- <div id="show" class="shadow-sm p-3"></div> -->
+    <h1 class="d-block align-center mx-auto" id="myName"></h1>
 
 
-    <button class="btn btn-danger" onclick="signO()">Sign out</button>
+    <button class="btn btn-danger mt-2" onclick="signO()">Sign out</button>
 
     <h1 class="mt-lg-5">Todo list</h1>
     <input type="text" placeholder="Todo" class="form-control my-3 shadow-none" id="todo">
@@ -86,14 +84,10 @@
                 const uid = user.uid;
                 console.log(`user is signed in, ${uid}`);
                 console.log(user);
-                show.innerHTML = `
-                    <h3>Welcome ${user.displayName}</h3>
-                    <p>Your email address is ${user.email}</p>
-                    <div>
-                        Profile picture:
-                        <img src="${user.photoURL}" alt="profile pic" />
-                    </div>
-                `
+   
+                myName.innerHTML =`<h1>Welcome ${user.displayName}<h1>`
+                myEmail.innerHTML =`<p>${user.email}</p>`
+                myImage.innerHTML =`<img src="${user.photoURL}" alt="profile pic" class="profile-picture">`
             } else {
                 console.log('user is signed out');
                 window.location.href = 'index.html'
