@@ -73,7 +73,8 @@
         projectId: "my-first-project-802f4",
         storageBucket: "my-first-project-802f4.appspot.com",
         messagingSenderId: "436162296288",
-        appId: "1:436162296288:web:6e411e4d6f1c5661b55385"
+        appId: "1:436162296288:web:6e411e4d6f1c5661b55385", 
+        databaseURL: "https://my-first-project-802f4-default-rtdb.firebaseio.com",
     };
 
         const app = initializeApp(firebaseConfig);
@@ -120,8 +121,8 @@
             let obj = {time, date, inputOne, inputTwo}
             console.log(obj)
             // let dbRef = ref(database, `users/${auth.currentUser.uid}/todos`);
-            let dbRef = ref(database, `todos/0`)
-            console.log(saved);
+            let dbRef = ref(database, `todos/1`)
+            // console.log(saved);
             let saved = set(dbRef, obj)
             if (saved) {
                 alert("todo saved")
