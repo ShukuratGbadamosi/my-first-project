@@ -23,7 +23,7 @@
     <input type="text" placeholder="Todo" class="form-control my-3 shadow-none" id="todolist">
     <input type="text" placeholder="Todeo description" class="form-control my-3 shadow-none" id="tododes">
     <button class="btn btn-primary" onclick="sumbmitTodo()">Submit</button>
-    <div  class="my-3 shadow-sm p-2" id="showy">hjkhkjh</div>
+    <div  class="my-3 shadow-sm p-2" id="showy"></div>
 
     <script type="module">
         // Import the functions you need from the SDKs you need
@@ -83,16 +83,17 @@
             let obj = {time, date, inputOne, inputTwo}
             console.log(obj)
             // let dbRef = ref(database, `users/${auth.currentUser.uid}/todos`);
-            let dbRef = ref(database, `todos/0`);
-            let saved = set(dbRef, obj);
+            let dbRef = ref(database, `todos/0`)
+            console.log(saved);
+            let saved = set(dbRef, obj)
             if (saved) {
                 alert("todo saved")
             } else {
                 alert("todo not saved")
             }
         }
-        document.getElementById('todo').value = ""
-        document.getElementById('todolist').value = ""
+        // document.getElementById('todo').value = ""
+        // document.getElementById('todolist').value = ""
     }
         window.sumbmitTodo = sumbmitTodo
 
