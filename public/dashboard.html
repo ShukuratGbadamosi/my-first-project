@@ -136,9 +136,13 @@
                 if (data.hasOwnProperty(key)) {
                     let todo = data[key];
                     showy.innerHTML += `
+                    <br>
                     <h5>${todo.inputOne}</h5>
                     <h5>${todo.inputTwo}</h5>
                     <small>${todo.time}, ${todo.date}</small>
+                    <br>
+                    <br>
+                    <hr>
                 `;
                 }
                 }
