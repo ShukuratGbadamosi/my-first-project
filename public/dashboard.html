@@ -132,9 +132,9 @@
             let data = snapshot.val();
             console.log(data);
             showy.innerHTML = "";
-            for (let todo in data) {
-                if (data.hasOwnProperty(todo)) {
-                    let todo = data[todo];
+            for (let key in data) {
+                if (data.hasOwnProperty(key)) {
+                    let key = data[key];
                     showy.innerHTML += `
                     <h5>${data[todo].inputOne}</h5>
                     <h5>${data[todo].inputTwo}</h5>
