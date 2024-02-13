@@ -124,21 +124,27 @@
                 }
             }
                 document.getElementById('todo').value = ""
-                document.getElementById('todoDes').value = ""
+                document.getElementById('todo').value = ""
         };
         window.submitTodo = submitTodo;
         let newRef = ref(database, `todos`);
         onValue(newRef, (snapshot) => {
             let data = snapshot.val();
             console.log(data);
-            data.map((todo, index) => {
-                showy.innerHTML += `
-                    <h5>${todo.inputOne}</h5>
-                    <h5>${todo.inputTwo}</h5>
-                    <small>${todo.time}, ${todo.date}</small>
+            showy.innerHTML = "";
+            for (let todo in data) {
+                if (data.hasOwnProperty(todo)) {
+                    let todo = data[todo];
+                    showy.innerHTML += `
+                    <h5>${data[todo].inputOne}</h5>
+                    <h5>${data[todo].inputTwo}</h5>
+                    <small>${data[todo].time}, ${data[todo].date}</small>
                 `;
-            });
-        });
+                }
+                }
+            })
+
+              
 
         //     const app = initializeApp(firebaseConfig);
         //     const auth = getAuth(app);
